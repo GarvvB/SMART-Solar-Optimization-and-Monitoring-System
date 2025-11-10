@@ -117,7 +117,7 @@ Real-Time Monitor
 
 
 🧠 Future Enhancements
-
+```bash
 ☁️ Live weather integration (OpenWeatherMap)
 
 🔋 Multi-inverter comparison dashboard
@@ -127,6 +127,7 @@ Real-Time Monitor
 📱 Mobile-friendly responsive Streamlit layout
 
 🌐 Flask/React frontend version for deployment
+```
 
 👨‍💻 Developed By
 
