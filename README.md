@@ -94,6 +94,8 @@ pip install -r requirements.txt
 streamlit run dashboard/soms_dashboard.py
 ```
 
+---
+
 🌤 Weather API (Coming Soon)
 
 Integration with OpenWeatherMap for real-time irradiance, temperature, humidity, and wind data.
@@ -102,19 +104,23 @@ Live data fusion into forecast and monitoring modules.
 
 Secure API key storage via .env and python-dotenv.
 
+---
+
+
 📊 Sample Visuals
-Metric Cards	
+# Metric Cards	
 
 <img width="1871" height="980" alt="image" src="https://github.com/user-attachments/assets/6140a644-5d0e-45fe-95fc-93c826a6f095" />
 
-Forecast	
+# Forecast	
 
 <img width="1874" height="839" alt="image" src="https://github.com/user-attachments/assets/c3de1819-c57c-497b-8780-48828ca10294" />
 
-Real-Time Monitor
+# Real-Time Monitor
 
 <img width="1879" height="922" alt="image" src="https://github.com/user-attachments/assets/44c47ace-768c-40c7-8954-c746a0adb7f2" />
 
+---
 
 🧠 Future Enhancements
 ```bash
@@ -129,6 +135,8 @@ Real-Time Monitor
 🌐 Flask/React frontend version for deployment
 ```
 
+---
+
 👨‍💻 Developed By
 
 Garv Bhardwaj
@@ -137,13 +145,17 @@ Garv Bhardwaj
 
 💡 “Turning renewable data into intelligent decisions.”
 
+---
+
 📜 License
 
 This project is licensed under the MIT License — see the LICENSE
  file for details.
 
+---
+
 💬 Feedback & Contributions
 
 Pull requests, suggestions, and issues are welcome!
 
-💡 If you like this project, give it a ⭐ on GitHub.
+> 💡 If you like this project, give it a ⭐ on GitHub.
