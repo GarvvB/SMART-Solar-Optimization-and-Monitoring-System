@@ -1,4 +1,86 @@
 import streamlit as st
+
+# --- Page Config (must be the first Streamlit call; only once) ---
+st.set_page_config(
+    page_title="🌞 SOMS Dashboard",
+    page_icon="⚡",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        "Get Help": "https://github.com/GarvvB/SMART-Solar-Optimization-and-Monitoring-System",
+        "Report a bug": "https://github.com/GarvvB/SMART-Solar-Optimization-and-Monitoring-System/issues",
+    },
+)
+
+# --- Custom UI Styling (targets current Streamlit DOM) ---
+st.markdown("""
+<style>
+/* App background */
+html, body, [data-testid="stAppViewContainer"] {
+  background: radial-gradient(circle at 12% 0%, #0A0F1F 10%, #1B2735 60%, #090A0F 100%) !important;
+  color: #F5F5F5 !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Clear the top header bar fill */
+[data-testid="stHeader"] { background: transparent !important; }
+
+/* Sidebar */
+aside[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #141824, #1E222F) !important;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Headings (shiny gold) */
+h1, h2 {
+  color: #FFD700 !important;
+  text-shadow: 0 0 12px rgba(255,215,0,0.45);
+  letter-spacing: 0.5px;
+}
+
+/* Subheadings & text */
+h3, h4, p, div, label, span {
+  color: #EAEAEA !important;
+  text-shadow: none !important;
+}
+
+/* Metric cards */
+.metric-card {
+  background-color: rgba(255,255,255,0.06);
+  padding: 18px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(255,215,0,0.15);
+}
+
+/* Tabs */
+.stTabs [role="tablist"] {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 4px;
+}
+.stTabs [role="tab"] {
+  color: #FFD700 !important;
+  font-weight: 500;
+}
+
+/* Page padding */
+.block-container {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
@@ -13,45 +95,9 @@ from src.fault_detection import detect_faults
 from streamlit_autorefresh import st_autorefresh
 
 # ---------------------------------------------
-# 🌞 STREAMLIT CONFIG
+# 🌞 STREAMLIT CONFIG --> At the top of this code
 # ---------------------------------------------
-st.set_page_config(page_title="SOMS Dashboard", layout="wide")
-st.markdown("""
-    <style>
-        .main {
-            background: linear-gradient(to bottom right, #1b2735, #090a0f);
-            color: #f5f5f5;
-            font-family: 'Poppins', sans-serif;
-        }
 
-        /* 🌟 Headings only (shine effect) */
-        h1, h2 {
-            color: #FFD700;
-            text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.4);
-        }
-
-        /* 🔸 Subheadings (normal white text) */
-        h3, h4, p, div, label, span {
-            color: #f5f5f5 !important;
-            text-shadow: none !important;
-        }
-
-        .metric-card {
-            background-color: rgba(255,255,255,0.08);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .block-container {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # ---------------------------------------------
 # 📁 PATH SETUP
