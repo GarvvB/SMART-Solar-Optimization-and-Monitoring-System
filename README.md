@@ -33,7 +33,7 @@ It enables:
 ---
 
 ## 🧱 Project Architecture
-
+```bash
 📦 SMART-Solar-Optimization-and-Monitoring-System
 ┣ 📂 dashboard/ # Streamlit dashboard UI
 ┃ ┗ 📜 soms_dashboard.py
@@ -53,7 +53,7 @@ It enables:
 ┣ 📜 train_models.py # Script to retrain models
 ┣ 📜 LICENSE # MIT License
 ┗ 📜 README.md # You’re here
-
+```
 
 ---
 
@@ -79,14 +79,20 @@ git clone https://github.com/GarvvB/SMART-Solar-Optimization-and-Monitoring-Syst
 cd SMART-Solar-Optimization-and-Monitoring-System
 ```
 ### 2️⃣ Create a Virtual Environment
+```bash
 python -m venv soms_env
 soms_env\Scripts\activate       # for Windows
+```
 
 ### 3️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 4️⃣ Run the Dashboard
+```bash
 streamlit run dashboard/soms_dashboard.py
+```
 
 🌤 Weather API (Coming Soon)
 
